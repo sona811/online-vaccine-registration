@@ -1,15 +1,13 @@
 import React from 'react';
-import '../Login.css';
-import Regform from '../Regform';
-import { Redirect, withRouter } from "react-router-dom";
-import { getDefaultNormalizer } from '@testing-library/react';
-import Profile from '../Profile';
+import './Login.css';
+import { Input } from '../components/form/input/Input';
+import { Button } from '../components/form/button/Button';
+import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
     constructor(props) {
         super(props)
         this.redirectToProfilePage()
-        this.redirectToRegisterPage()
         this.state = {
             email: '',
             pass: ''
@@ -39,17 +37,11 @@ class Login extends React.Component {
             alert('email and password is wrong')
         }
     };
-    
-    registerPage = () => {
-        if (this.state.email === 'sona123@gmail.com' && this.state.pass === 'sona123') {
-            localStorage.setItem('email', this.state.email);
-            localStorage.setItem('pass', this.state.pass);
-            this.props.history.push('/register')
-        }
-        else {
-            alert('email and password is wrong')
-        }
-    };
+
+    redirectToRegisterPage = () => {
+        this.props.history.push('/register')
+
+    }
 
     redirectToProfilePage = () => {
         const email = localStorage.getItem('email')
@@ -60,25 +52,17 @@ class Login extends React.Component {
         }
     }
 
-    redirectToRegisterPage = () => {
-        const email = localStorage.getItem('email')
-        const pass = localStorage.getItem('pass')
-
-        if (email === 'sona123@gmail.com' || pass === 'sona123') {
-            this.props.history.push('/register')
-        }
-    }
-
     render() {
         return (
             <div className="parent-container">
-                <form className="container">
-                    <input type='email' id='mail' placeholder='Enter Email' value={this.state.email} onChange={this.changeItem} />
-                    <input type='password' id='pas' placeholder='Enter Password' value={this.state.pass} onChange={this.changeItem} />
-                    <br />
-                    <button onClick={() => this.logIn()}>Login</button>
-                    <button onClick={() => this.registerPage()}>Register</button>
-                </form>
+                <div className="container">
+                    <form >
+                        <Input  id='mail' type='email' value={this.state.email} onChange={this.changeItem} label='Email' />
+                        <Input id='pas' type='password' value={this.state.pass} onChange={this.changeItem} label='Password'/>
+                        <Button type="Button" id="button" value={this.state.button} onClick={() => this.logIn()} label='Login'/>
+                        <Button type="Button" id="button" value={this.state.button} onClick={() => this.redirectToRegisterPage()} label='Register'/>
+                    </form>
+                </div>
             </div>
         )
     };
