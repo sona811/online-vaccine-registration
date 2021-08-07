@@ -1,0 +1,20 @@
+.nav-container{
+    display: flex;
+    height: 6vh;
+    background-color: darkgray;
+    justify-content: flex-end;
+}
+.nav-container > div{
+    height: 100%;
+}
+.nav-container > div > button{
+    height: 100%;
+}
+.chat-icon {
+    color: black;
+    z-index: 10;
+}
+.chat-icon > fill {
+    color: black;
+}
+
