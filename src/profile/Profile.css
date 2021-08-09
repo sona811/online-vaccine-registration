@@ -1,0 +1,30 @@
+.main-container {
+    border: 1px solid goldenrod;
+    display: flex;
+    height: 94vh;
+    width: 100vw;
+}
+
+.profile-details-container {
+    height: 100%;
+    width: 25%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vaccine-container {
+    height: 100%;
+    width: 73%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.button-container {
+    margin: 5em;
+    padding: 3em !important;
+}

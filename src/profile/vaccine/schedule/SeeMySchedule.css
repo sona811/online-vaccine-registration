@@ -1,0 +1,23 @@
+.schedule-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.table-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-button {
+    margin: 1em 0 0 1em !important;
+}
+.table-container > table {
+    border: 1px solid black;
+}
+table > tr,td,th {
+    border: 1px solid black;
+}
+table > td,th {
+    padding: 1em;
+}
