@@ -20,7 +20,13 @@ export class SeeMySchedule extends React.Component {
             <tr>
               <td>Dose 1</td>
               <td>COVISHIELD</td>
-              <td>10 AM</td>
+              <td>10am To 1pm</td>
+              <td>Thane</td>
+            </tr>
+            <tr>
+              <td>Dose 2</td>
+              <td>COVISHIELD</td>
+              <td>2pm To 4pm</td>
               <td>Thane</td>
             </tr>
           </table>
