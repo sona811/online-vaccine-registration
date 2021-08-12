@@ -1,24 +1,22 @@
 import React from 'react';
 import './Button.css';
 
-export class Button extends React.Component {
+export const Button = ({ className, id, type, value, onClick, label, children }) => {
 
-    render() {
-        return (
-            <div className='container'>
-                <button
-                    className={this.props.className}
-                    id={this.props.id} type={this.props.type}
-                    value={this.props.value}
-                    onClick={this.props.onClick} >
-                    { this.props.label !== undefined
-                        ? <label>{this.props.label}</label>
-                        : this.props.children
-                    }
-                </button>
-            </div>
-        )
-    }
-
+    return (
+        <div className='container'>
+            <button
+                className={className}
+                id={id}
+                type={type}
+                value={value}
+                onClick={onClick} >
+                {label !== undefined
+                    ? <label>{label}</label>
+                    : children
+                }
+            </button>
+        </div>
+    )
 }
 
