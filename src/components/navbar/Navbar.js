@@ -2,25 +2,25 @@ import React from 'react';
 import './Navbar.css';
 import { Button } from '../form/button/Button';
 import { ReactComponent as ChatIcon } from '../../assets/icons/chat.svg'
+import { useHistory } from 'react-router-dom';
 
-export class Navbar extends React.Component {
+export const Navbar = () => {
+  
+  const history = useHistory();
 
-  removeCredential = () => {
+  const removeCredential = () => {
     localStorage.removeItem('email')
     localStorage.removeItem('pass')
-    this.props.history.push('/login')
+    history.push('/login')
   }
 
-  render() {
-    return (
-      <div className='nav-container'>
-        <Button
-          className='message-button'>
-            <ChatIcon className='chat-icon' fill='black'/>
-        </Button>
-        <Button onClick={() => this.removeCredential()} label='Logout' />
-      </div>
-    )
-  }
+  return (
+    <div className='nav-container'>
+      <Button
+        className='message-button'>
+        <ChatIcon className='chat-icon' fill='black' />
+      </Button>
+      <Button onClick={() => removeCredential()} label='Logout' />
+    </div>
+  )
 }
-
