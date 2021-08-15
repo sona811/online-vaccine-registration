@@ -1,9 +1,10 @@
 
 .parent-container{
-  
-  height:fit-content;
-  width: fit-content;
-  border: 1px splid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 1px splid red;
   margin: 0 auto;
   padding: 24px;
 }
@@ -27,5 +28,8 @@
   outline: none;
   border-radius: 20px;
   margin-top: 50px;
+}
+.container > form > div > button {
+  margin-top: 1em;
 }
  
