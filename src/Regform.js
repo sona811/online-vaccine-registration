@@ -4,6 +4,7 @@ import './Regform.css';
 import { withRouter } from "react-router-dom";
 
 class Regform extends React.Component {
+
     constructor(props) {
         super(props)
         this.checkValidCredentialRegister()
